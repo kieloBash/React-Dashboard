@@ -11,7 +11,7 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize } = useStateContext();
 
   const handleCloseSideBar = () => {
-    if(activeMenu && screenSize <= 900){
+    if (activeMenu && screenSize <= 900) {
       setActiveMenu(false);
     }
   };
@@ -31,13 +31,17 @@ const Sidebar = () => {
               onClick={handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
-              <SiShopware />
-              <span>Shoppy</span>
+              <SiShopware style={{ color: "red" }}/>
+              <span className="text-2xl" style={{ color: "red" }}>
+                Shoppify
+              </span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => {setActiveMenu((prevActiveMenu)=>!prevActiveMenu)}}
+                onClick={() => {
+                  setActiveMenu((prevActiveMenu) => !prevActiveMenu);
+                }}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
